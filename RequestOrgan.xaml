@@ -1,0 +1,112 @@
+﻿<Page x:Class="MeNeedLife.RequestOrgan"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      MaxWidth="1366"      
+	Title="Request Organ">
+    <DockPanel>
+        <Frame x:Name="_requestOrganFrame"/>
+        <Grid Grid.RowSpan="2" Width="1369" Height="768">
+            <ListBox Name="odonorBox" IsSynchronizedWithCurrentItem="True"  BorderBrush="Transparent" Margin="656,48,0,176" Background="Transparent" SelectionChanged="DonateOrganBoxTL_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0" Width="auto" Height="100">
+                            <TextBlock  Margin="0,10,0,0" Width="600" Height="auto" FontWeight="Bold" Foreground="DarkSlateGray" VerticalAlignment="Top" TextWrapping="Wrap" FontSize="20" Text="{Binding Summary.Text, Converter={StaticResource Util}}" ToolTip="{Binding Path=PublishDate.Date}"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ProgressBar Name="DBProgressBar" HorizontalAlignment="Left" Height="10" Margin="650,0,0,0" BorderBrush="Transparent" VerticalAlignment="Top" Width="710" IsIndeterminate="True" Background="Transparent"/>
+            <Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="651" Name="ContentPanel">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Assets/layout.jpg"></ImageBrush>
+                </Grid.Background>
+
+                <ComboBox Padding="10 0 0 0" Foreground="SeaGreen" FontWeight="Bold" FontSize="20" Background="White" BorderBrush="SeaGreen" BorderThickness="2" SelectionChanged="odOrgan" Tag="{Binding Name}" HorizontalAlignment="Left" Height="40" Name="oBloodBox" Width="318" Margin="290,103,0,630">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Select an Organ" IsSelected="True"/>
+                        <ComboBoxItem Content="Eyes"/>
+                        <ComboBoxItem Content="Lungs"/>
+                        <ComboBoxItem Content="Heart"/>
+                        <ComboBoxItem Content="Liver"/>
+                        <ComboBoxItem Content="Kidneys"/>
+                        <ComboBoxItem Content="Pancreas"/>
+                    </ComboBox.Items>
+                </ComboBox>
+
+                <ComboBox Padding="10 0 0 0" Foreground="SeaGreen" FontWeight="Bold" FontSize="20" Height="35" BorderBrush="SeaGreen" BorderThickness="2" SelectionChanged="odCity" Tag="{Binding Name}" HorizontalAlignment="Left" Width="318" Margin="290,212,0,0" Name="brCityBox" VerticalAlignment="Top">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Select Nearest City" IsSelected="True"/>
+                        <ComboBoxItem Content="Mumbai"/>
+                        <ComboBoxItem Content="Delhi"/>
+                        <ComboBoxItem Content="Pune"/>
+                        <ComboBoxItem Content="Bangalore"/>
+                        <ComboBoxItem Content="Bhopal"/>
+                        <ComboBoxItem Content="Hyderabad"/>
+                        <ComboBoxItem Content="Ahmedabad"/>
+                        <ComboBoxItem Content="Jaipur"/>
+                        <ComboBoxItem Content="Kolkata"/>
+                        <ComboBoxItem Content="Patna"/>
+                        <ComboBoxItem Content="Ranchi"/>
+                        <ComboBoxItem Content="Srinagar"/>
+                        <ComboBoxItem Content="Chandigarh"/>
+                        <ComboBoxItem Content="Amritsar"/>
+                        <ComboBoxItem Content="Lucknow"/>
+                        <ComboBoxItem Content="Kanpur"/>
+                        <ComboBoxItem Content="Raipur"/>
+                        <ComboBoxItem Content="Ahmedabad"/>
+                        <ComboBoxItem Content="Panaji"/>
+                        <ComboBoxItem Content="Trivendrum"/>
+                        <ComboBoxItem Content="Chennai"/>
+                        <ComboBoxItem Content="Bhubaneshwar"/>
+                        <ComboBoxItem Content="Guwahati"/>
+                        <ComboBoxItem Content="Shimla"/>
+                        <ComboBoxItem Content="Dehradun"/>
+                    </ComboBox.Items>
+                </ComboBox>
+                <TextBox Name="rbName" Foreground="SeaGreen" Text="" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Margin="290,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="318" BorderBrush="SeaGreen" BorderThickness="2" GotFocus="rbName_GotFocus"/>
+                <TextBox Name="rbHos" Foreground="SeaGreen" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="290,397,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="30" Width="318" BorderBrush="SeaGreen" BorderThickness="2" GotFocus="hos_GotFocus" ToolTip="Please enter name Attending Doctor or Hospital, they will be official channel"/>
+                <TextBox Name="rbMob" Foreground="SeaGreen" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" InputScope="Number" MaxLength="10" Margin="290,460,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="30" Width="318" BorderBrush="SeaGreen" BorderThickness="2" GotFocus="rbMob_GotFocus"/>
+                <Button FontSize="25" Background="SeaGreen" Foreground="White" FontWeight="Bold" Name="submitBtn" Content="Request Organ" HorizontalAlignment="Left" Margin="70,650,0,0" VerticalAlignment="Top" Width="538" Height="60" Click="Button_Click_1" StylusButtonUp="submitBtn_StylusButtonUp"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" Name="notify" Margin="70,580,0,0" TextWrapping="Wrap" Text="Please ensure proper internet connectivity, before you submit the request. Also fill full details with correctness." VerticalAlignment="Top" Width="538"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,207,0,0" TextWrapping="Wrap" Text="Your City" VerticalAlignment="Top"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,332,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,460,0,0" TextWrapping="Wrap" Text="Mobile" VerticalAlignment="Top"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,394,0,0" TextWrapping="Wrap" Text="Doctor/Hospital" VerticalAlignment="Top" ToolTip="Please enter name Attending Doctor or Hospital, they will be official channel"/>
+                <TextBlock Foreground="GreenYellow" FontWeight="Bold" FontSize="20" Height="30" HorizontalAlignment="Left" Margin="545,495,0,0" Name="countCheck" Text="0/10" VerticalAlignment="Top" Width="63"/>
+                <TextBlock HorizontalAlignment="Left" FontSize="40" Foreground="White" FontWeight="ExtraBlack" Margin="10,0,0,0" TextWrapping="Wrap" Text="Request Organ" VerticalAlignment="Top" Height="67" Width="374"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,100,0,0" TextWrapping="Wrap" Text="Organ" VerticalAlignment="Top"/>
+            </Grid>
+            <TextBlock x:Name="LoadingText" HorizontalAlignment="Left" Margin="656,15,0,0" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="704"><Run Text="Please wait while we load the list of those who Requested or Pledged Organs"/><InlineUIContainer>
+       </InlineUIContainer></TextBlock>
+            <TextBlock TextWrapping="Wrap" Name="bdTitle" Visibility="Collapsed" FontSize="30" Text="Organ TimeLine" Margin="656,0,383,714" Foreground="SeaGreen" Height="39"/>
+            <Grid HorizontalAlignment="Left" Height="142" Margin="650,626,-18,0" VerticalAlignment="Top" Width="737" Background="Gray">
+
+                <Image Source="/Assets/back.png" Height="64" Width="64" Name="backimg" Margin="40,15,632,48" StylusButtonUp="backimg_StylusUp" MouseUp="backimg_MouseUp" MouseLeave="Image_MouseLeave" MouseEnter="Image_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/refresh.png" Name="refresh" Height="64" Width="64" Margin="156,15,516,48" StylusButtonUp="refresh_StylusUp" MouseUp="refresh_MouseUp" MouseLeave="refresh_MouseLeave" MouseEnter="refresh_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/home.png" Name="home" Height="64" Width="64" Margin="266,15,406,48" StylusButtonUp="home_StylusButtonUp" MouseUp="home_MouseUp" MouseLeave="home_MouseLeave" MouseEnter="home_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/about.png" Name="about" Height="64" Width="64" Margin="376,15,296,48" StylusButtonUp="about_StylusButtonUp" MouseUp="about_MouseUp" MouseLeave="about_MouseLeave" MouseEnter="about_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/mycity.png" Name="mycity" Height="64" Width="64" Margin="496,15,176,48" StylusButtonUp="mycity_StylusButtonUp" MouseUp="mycity_MouseUp" MouseLeave="mycity_MouseLeave" MouseEnter="mycity_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/howto.png" Name="howto" Height="64" Width="64" Margin="612,15,60,48" StylusButtonUp="howto_StylusButtonUp" MouseUp="howto_MouseUp" MouseLeave="howto_MouseLeave" MouseEnter="howto_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/fbs.jpg" Margin="10,-60,651,124" Name="FBSBtn" Opacity="0.5" StylusButtonUp="FBS_StylusButtonUp" MouseUp="FBS_MouseUp" IsHitTestVisible="False" ToolTip="Share selected on Facebook Now">
+                </Image>
+                <Image Source="/Assets/tws.jpg" Margin="612,-60,49,125" Name="TWSBtn"  Opacity="0.5" StylusButtonUp="TWS_StylusButtonUp" MouseUp="TWS_MouseUp" IsHitTestVisible="False" ToolTip="Share selected on Twitter Now">
+                </Image>
+                <TextBlock HorizontalAlignment="Left" Margin="55,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Search" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="170,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Refresh" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="282,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Home" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="392,85,0,0" TextWrapping="Wrap" Foreground="White" Text="About" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="505,85,0,0" TextWrapping="Wrap" Foreground="White" Text="TimeLine" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="625,85,0,0" TextWrapping="Wrap" Foreground="White" Text="How To" VerticalAlignment="Top"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Page>

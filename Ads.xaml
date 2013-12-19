@@ -1,0 +1,97 @@
+﻿<Page x:Class="MeNeedLife.Ads"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      MaxWidth="1366"      
+	Title="Request Organ">
+    <DockPanel>
+        <Frame x:Name="_aboutFrame"/>
+        <Grid Grid.RowSpan="2" Width="1369" Height="768">
+            <TextBlock x:Name="TextAbout" Padding="10 20 0 0" HorizontalAlignment="Left" Margin="656,-13,0,0" FontSize="25" Visibility="Collapsed" FontFamily="Georgia" Foreground="Black" TextWrapping="Wrap" VerticalAlignment="Top" Height="639" Width="664">
+            	<Run Text="Currently more than 115,000 men, women and children are awaiting organ transplants to save their lives."/>
+            	<LineBreak/>
+            	<Span>
+            		<Run/>
+            	</Span>
+            	<LineBreak/>
+            	<Span>
+            		<Run Text="They're in need of blood, hearts, kidneys, livers, lungs, and other organs which can all be transplanted if donors were available , giving them a second chance at life."/>
+            	</Span>
+            	<LineBreak/>
+            	<Span>
+            		<Run/>
+            	</Span>
+            	<LineBreak/>
+            	<Span>
+            		<Run Foreground="Red" Text="This app, MeNeedLife will help you to connect with the several donors and about 200 NGOs along with other organizations that have been scrutinised for transparency &amp; credibility at the same time."/>
+            	</Span>
+                <LineBreak/>
+                <Span>
+            		<Run/>
+            	</Span>
+                <LineBreak/>
+            	
+            	<Run/>
+                        
+                 <Span>
+            		<Run Text="With features like Request Organ, Request Blood, Donate Organ, Donate Blood the application in itself is like a Window of a Organization in your Hand. Just fill easy forms and go through timelines to utilize it accordingly."/>
+            	</Span>
+                <LineBreak/>
+                <Span>
+            		<Run/>
+            	</Span>
+                <LineBreak/>            	
+            	<Run/>                        
+                 <Span>
+            		<Run Text="Check the Supporters page for more details regarding the supporting organizations and social entities. Also go back and check our Support Us page to help us so that we can spread our cause and save lives. ~ MeNeedit"/>
+            	</Span>
+            </TextBlock>
+            <Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="651" Name="ContentPanel">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Assets/layout.jpg"></ImageBrush>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Left" FontSize="40" Foreground="White" FontWeight="ExtraBlack" Margin="10,0,0,0" TextWrapping="Wrap" Text="Why Should You!!" VerticalAlignment="Top" Height="67" Width="374"/>
+                <ListBox Padding="20 0 0 0" Foreground="RoyalBlue" Height="462" FontSize="22" BorderBrush="Transparent" Background="Transparent" FontWeight="Bold" SelectionChanged="CitySelect" Tag="{Binding Name}" HorizontalAlignment="Left" Width="661" Margin="-10,348,0,-42" x:Name="CityBox" VerticalAlignment="Top">
+                    <ListBoxItem Content="1"/>
+                    <ListBoxItem Content="2"/>
+                    <ListBoxItem Content="3"/>
+                    <ListBoxItem Content="4"/>
+                    <ListBoxItem Content="5"/>
+                    <ListBoxItem Content="6"/>
+                    <ListBoxItem Content="7"/>
+                    <ListBoxItem Content="8"/>
+                    <ListBoxItem Content="9"/>
+                    <ListBoxItem Content="10"/>
+
+                </ListBox>
+                <TextBlock HorizontalAlignment="Left" Margin="0,72,0,0" TextWrapping="Wrap" Padding="10" FontSize="20" Foreground="White" Text="Before you ask anything, please go through the videos we have selected for you. Just click on the Video Number provided below and watch through. Please note that these videos are directly streamed using Internet connection, so ensure you have a got a Internet connection which is online. So just go through these videos and be ready for the answer why should you donate organ or blood." VerticalAlignment="Top" Height="193" Width="651"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,297,0,0" TextWrapping="Wrap" Text="Select a Video" FontSize="40" FontFamily="Georgia" Foreground="Turquoise" VerticalAlignment="Top" Height="46" Width="631"/>
+            </Grid>
+            <TextBlock TextWrapping="Wrap" Name="bdTitle" Visibility="Collapsed" FontSize="30" Text="Organ Request TimeLine" Margin="656,0,383,714" Foreground="SeaGreen" Height="39"/>
+            <Grid HorizontalAlignment="Left" Height="142" Margin="651,626,-19,0" VerticalAlignment="Top" Width="737" Background="Gray">
+
+                <Image Source="/Assets/back.png" Height="64" Width="64" Name="backimg" Margin="40,15,632,48" StylusButtonUp="backimg_StylusUp" MouseUp="backimg_MouseUp" MouseLeave="Image_MouseLeave" MouseEnter="Image_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/filter.png" Name="filter" Height="64" Width="64" Margin="160,22,503,56" StylusButtonUp="filter_StylusUp" MouseUp="filter_MouseUp" MouseLeave="filter_MouseLeave" MouseEnter="filter_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/home.png" Name="home" Height="64" Width="64" Margin="266,15,406,48" StylusButtonUp="home_StylusButtonUp" MouseUp="home_MouseUp" MouseLeave="home_MouseLeave" MouseEnter="home_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/about.png" Name="about" Height="64" Width="64" Margin="376,15,296,48" StylusButtonUp="about_StylusButtonUp" MouseUp="about_MouseUp" MouseLeave="about_MouseLeave" MouseEnter="about_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/mycity.png" Name="mycity" Height="64" Width="64" Margin="496,15,176,48" StylusButtonUp="mycity_StylusButtonUp" MouseUp="mycity_MouseUp" MouseLeave="mycity_MouseLeave" MouseEnter="mycity_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/howto.png" Name="howto" Height="64" Width="64" Margin="612,15,60,48" StylusButtonUp="howto_StylusButtonUp" MouseUp="howto_MouseUp" MouseLeave="howto_MouseLeave" MouseEnter="howto_MouseEnter" >
+                </Image>
+                <TextBlock HorizontalAlignment="Left" Margin="55,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Search" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="170,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Filter Now" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="282,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Home" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="392,85,0,0" TextWrapping="Wrap" Foreground="White" Text="About" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="505,85,0,0" TextWrapping="Wrap" Foreground="White" Text="TimeLine" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="625,85,0,0" TextWrapping="Wrap" Foreground="White" Text="How To" VerticalAlignment="Top"/>
+            </Grid>
+            <WebBrowser Name="browser" HorizontalAlignment="Left" Height="626" Source="http://techiesin.com/dogood/ads/1.html" Margin="651,0,-19,0" OverridesDefaultStyle="False" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" VerticalAlignment="Top" Width="737"/>
+        </Grid>
+    </DockPanel>
+</Page>

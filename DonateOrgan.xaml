@@ -1,0 +1,120 @@
+﻿<Page x:Class="MeNeedLife.DonateOrgan"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      MaxWidth="1366"      
+	Title="Donate Organ">
+
+       <DockPanel>
+        <Frame x:Name="_donateOrganFrame"/>
+        <Grid Grid.RowSpan="2" Width="1363" Height="768">
+            <Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="650" Name="ContentPanel">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Assets/layout.jpg"></ImageBrush>
+                </Grid.Background>
+                <ComboBox Padding="10 2 0 0" Foreground="ForestGreen" FontWeight="Bold" FontSize="20" Height="35" BorderBrush="ForestGreen" SelectionChanged="OrganDonateBlood" Tag="{Binding Name}" HorizontalAlignment="Left" Name="rBloodBox" Width="318" Margin="290,67,0,640">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Select Blood Group" IsSelected="True"/>
+                        <ComboBoxItem Content="A+"/>
+                        <ComboBoxItem Content="A-"/>
+                        <ComboBoxItem Content="AB+"/>
+                        <ComboBoxItem Content="AB-"/>
+                        <ComboBoxItem Content="B+"/>
+                        <ComboBoxItem Content="B-"/>
+                        <ComboBoxItem Content="O+"/>
+                        <ComboBoxItem Content="O-"/>
+                    </ComboBox.Items>
+                </ComboBox>
+
+                <ComboBox Foreground="ForestGreen" FontWeight="Bold" Padding="10 2 0 0" FontSize="20" Height="35" Background="White" BorderBrush="ForestGreen" BorderThickness="2" SelectionChanged="odOrgan" Tag="{Binding Name}" HorizontalAlignment="Left" Name="oBloodBox" Width="318" Margin="290,160,0,550">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Select Organ" IsSelected="True"/>
+                        <ComboBoxItem Content="All"/>
+                        <ComboBoxItem Content="Eyes"/>
+                        <ComboBoxItem Content="Lungs"/>
+                        <ComboBoxItem Content="Heart"/>
+                        <ComboBoxItem Content="Liver"/>
+                        <ComboBoxItem Content="Kidneys"/>
+                        <ComboBoxItem Content="Pancreas"/>
+                    </ComboBox.Items>
+                </ComboBox>
+
+                <ComboBox Padding="10 2 0 0" Foreground="ForestGreen" FontSize="20" Height="35" FontWeight="Bold" BorderBrush="ForestGreen" BorderThickness="2" SelectionChanged="odCity" Tag="{Binding Name}" HorizontalAlignment="Left" Width="318" Margin="290,249,0,0" Name="brCityBox" VerticalAlignment="Top">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Select City" IsSelected="True"/>
+                        <ComboBoxItem Content="Mumbai"/>
+                        <ComboBoxItem Content="Delhi"/>
+                        <ComboBoxItem Content="Pune"/>
+                        <ComboBoxItem Content="Bangalore"/>
+                        <ComboBoxItem Content="Bhopal"/>
+                        <ComboBoxItem Content="Hyderabad"/>
+                        <ComboBoxItem Content="Ahmedabad"/>
+                        <ComboBoxItem Content="Jaipur"/>
+                        <ComboBoxItem Content="Kolkata"/>
+                        <ComboBoxItem Content="Patna"/>
+                        <ComboBoxItem Content="Ranchi"/>
+                        <ComboBoxItem Content="Srinagar"/>
+                        <ComboBoxItem Content="Chandigarh"/>
+                        <ComboBoxItem Content="Amritsar"/>
+                        <ComboBoxItem Content="Lucknow"/>
+                        <ComboBoxItem Content="Kanpur"/>
+                        <ComboBoxItem Content="Raipur"/>
+                        <ComboBoxItem Content="Panaji"/>
+                        <ComboBoxItem Content="Trivendrum"/>
+                        <ComboBoxItem Content="Chennai"/>
+                        <ComboBoxItem Content="Bhubaneshwar"/>
+                        <ComboBoxItem Content="Guwahati"/>
+                        <ComboBoxItem Content="Shimla"/>
+                        <ComboBoxItem Content="Dehradun"/>
+                    </ComboBox.Items>
+                </ComboBox>
+                <TextBox Name="rbName" Foreground="ForestGreen" Text="" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Margin="290,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="318" BorderBrush="ForestGreen" BorderThickness="2" GotFocus="rbName_GotFocus"/>
+                <TextBox Name="rbMob" Foreground="ForestGreen" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" InputScope="Number" MaxLength="10" Margin="290,460,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="30" Width="318" BorderBrush="ForestGreen" BorderThickness="2" GotFocus="rbMob_GotFocus"/>
+                <Button FontSize="25" Background="ForestGreen" Foreground="White" FontWeight="Bold" Name="submitBtn" Content="Pledge Organ Donation" HorizontalAlignment="Left" Margin="70,651,0,0" VerticalAlignment="Top" Width="538" Height="60" StylusButtonUp="submitBtn_StylusButtonUp" Click="Button_Click_1"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" Name="notify" Margin="70,580,0,0" TextWrapping="Wrap" Text="Please ensure proper internet connectivity, before you submit the request. Also fill full details with correctness." VerticalAlignment="Top" Width="538"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,75,0,0" TextWrapping="Wrap" Text="BloodGroup" VerticalAlignment="Top"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,249,0,0" TextWrapping="Wrap" Text="Your City" VerticalAlignment="Top"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="23,326,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,399,0,0" TextWrapping="Wrap" Text="Disease History" VerticalAlignment="Top" ToolTip="Please tick if you had a history of chronic diseases or hereditary disorders"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,460,0,0" TextWrapping="Wrap" Text="Mobile" VerticalAlignment="Top"/>
+                <TextBlock Foreground="GreenYellow" FontWeight="Bold" FontSize="20" Height="30" HorizontalAlignment="Left" Margin="545,495,0,0" Name="countCheck" Text="0/10" VerticalAlignment="Top" Width="63"/>
+
+                <TextBlock HorizontalAlignment="Left" FontSize="40" Foreground="White" FontWeight="ExtraBlack" Margin="10,0,0,0" TextWrapping="Wrap" Text="Donate Organ" VerticalAlignment="Top" Height="67" Width="374"/>
+                <RadioButton  Name="btnY" GroupName="dis" Content="Yes" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="290,405,0,0" VerticalAlignment="Top" Height="33" Width="121" ToolTip="Please tick if you had a history of chronic diseases or hereditary disorders"/>
+                <RadioButton Name="btnN" GroupName="dis" Content="No" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="449,405,0,0" VerticalAlignment="Top" Height="33" Width="121" ToolTip="Please tick if you had a history of chronic diseases or hereditary disorders"/>
+                <CheckBox Name="privacy" Content="Yes, I want this donation to be private" FontSize="15" Foreground="White" HorizontalAlignment="Left" Margin="290,530,0,0" VerticalAlignment="Top"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" FontSize="25" Margin="20,160,0,0" TextWrapping="Wrap" Text="Organ" VerticalAlignment="Top"/>
+            </Grid>
+            <TextBlock TextWrapping="Wrap" Name="bdTitle" Visibility="Collapsed" FontSize="30" Text="Organ Donor TimeLine" Margin="656,0,383,714" Foreground="ForestGreen" Height="39"/>
+            <Grid HorizontalAlignment="Left" Height="142" Margin="650,626,-18,0" VerticalAlignment="Top" Width="737" Background="Gray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="/Assets/back.png" Height="64" Width="64" Name="backimg" Margin="40,22,556,56" StylusButtonUp="backimg_StylusUp" MouseUp="backimg_MouseUp" MouseLeave="Image_MouseLeave" MouseEnter="Image_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/filter.png" Name="filter" Height="64" Width="64" Margin="156,22,440,56" StylusButtonUp="filter_StylusUp" MouseUp="filter_MouseUp" MouseLeave="filter_MouseLeave" MouseEnter="filter_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/home.png" Name="home" Height="64" Width="64" Margin="266,22,330,56" StylusButtonUp="home_StylusButtonUp" MouseUp="home_MouseUp" MouseLeave="home_MouseLeave" MouseEnter="home_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/about.png" Name="about" Height="64" Width="64" Margin="376,22,220,56" StylusButtonUp="about_StylusButtonUp" MouseUp="about_MouseUp" MouseLeave="about_MouseLeave" MouseEnter="about_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/mycity.png" Name="mycity" Height="64" Width="64" Margin="496,22,100,56" StylusButtonUp="mycity_StylusButtonUp" MouseUp="mycity_MouseUp" MouseLeave="mycity_MouseLeave" MouseEnter="mycity_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/howto.png" Name="howto" Height="64" Width="64" Margin="612,22,61,56" StylusButtonUp="howto_StylusButtonUp" MouseUp="howto_MouseUp" MouseLeave="howto_MouseLeave" MouseEnter="howto_MouseEnter" Grid.ColumnSpan="2" >
+                </Image>
+
+                <TextBlock HorizontalAlignment="Left" Margin="55,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Search" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="160,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Filter Now" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="282,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Home" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="392,85,0,0" TextWrapping="Wrap" Foreground="White" Text="About" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="505,85,0,0" TextWrapping="Wrap" Foreground="White" Text="TimeLine" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="625,85,0,0" TextWrapping="Wrap" Foreground="White" Text="How To" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            </Grid>
+            <Image HorizontalAlignment="Left" Source="/Assets/poster3.png" Height="636" Margin="650,0,0,0" VerticalAlignment="Top" Width="713"/>
+        </Grid>
+    </DockPanel>
+</Page>

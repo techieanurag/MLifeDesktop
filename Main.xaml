@@ -1,0 +1,94 @@
+﻿<Page x:Class="MeNeedLife.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="Main" Width="1366" Height="768">
+    <DockPanel>
+        <Frame x:Name="_mainFrame"/>
+        <Grid>
+            <Button HorizontalAlignment="Left" Background="Red" Margin="65,56,0,0" VerticalAlignment="Top" Height="200" Width="400" StylusButtonUp="donateBloodStylus" Click="donateBloodClick">
+                <StackPanel>
+                    <Image Source="Icons/bloodDonor.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Donate Blood"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="485,56,0,0" Background="SeaGreen" VerticalAlignment="Top" Height="200" Width="190" StylusButtonUp="requestOrganStylus" Click="requestOrganClick">
+                <StackPanel>
+                    <Image Source="Icons/organRequest.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Request Organ"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="695,56,0,0" Background="Crimson" VerticalAlignment="Top" Height="200" Width="190" Click="requestBloodClick" StylusButtonUp="requestBloodStylus">
+                <StackPanel>
+                    <Image Source="Icons/bloodRequest.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Request Blood"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="905,56,0,0" Background="Green" VerticalAlignment="Top" Height="200" Width="400" Click="donateOrganClick" StylusButtonUp="donateOrganStylus">
+                <StackPanel>
+                    <Image Source="Icons/organDonor.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Donate Organ"/></TextBlock>
+                </StackPanel>
+            </Button>
+
+            <Button Background="OrangeRed" HorizontalAlignment="Left" Margin="485,285,0,0" VerticalAlignment="Top" Height="200" Width="190" Click="contactClick" StylusButtonUp="contactStylus">
+                <StackPanel>
+                    <Image Source="Icons/contactIcon.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Contact"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Background="DarkCyan" Margin="275,285,0,0" VerticalAlignment="Top" Height="200" Width="190" Click="aboutClick" StylusButtonUp="aboutStylus">
+                <StackPanel>
+                    <Image Source="Icons/aboutIcon.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="About"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="695,285,0,0" Background="DarkOrchid" VerticalAlignment="Top" Height="200" Width="190" Click="searchClick" StylusButtonUp="searchStylus">
+                <StackPanel>
+                    <Image Source="Icons/searchIcon.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Search"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Background="SteelBlue" HorizontalAlignment="Left" Margin="695,518,0,0" VerticalAlignment="Top" Height="200" Width="190" Click="mycityClick" StylusButtonUp="mycityStylus">
+                <StackPanel>
+                    <Image Source="Icons/cityIcon.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="My City"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Background="Peru" Margin="905,285,0,0" VerticalAlignment="Top" Height="200" Width="190" Click="howtoClick" StylusButtonUp="howtoStylus">
+                <StackPanel>
+                    <Image Source="Icons/howtoIcon.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="How To"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Background="OliveDrab" Margin="1115,285,0,0" VerticalAlignment="Top" Height="200" Width="190" Click="supportClick" StylusButtonUp="supportStylus">
+                <StackPanel>
+                    <Image Source="Icons/supportIcon.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Support Us"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="65,518,0,0" VerticalAlignment="Top" Height="200" Width="610" Background="YellowGreen" Click="timeLineClick" StylusButtonUp="timeLineStylus">
+                <StackPanel>
+                    <Image Source="Icons/timelineIcon.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="TimeLine"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="905,518,0,0" VerticalAlignment="Top" Background="Gray" Height="200" Width="400" Click="whyClick" StylusButtonUp="whyStylus">
+                <StackPanel>
+                    <Image Source="Icons/whyIcon.png" Height="150"></Image>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Why Donate - Videos"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <TextBlock HorizontalAlignment="Left" Margin="65,0,0,0" TextWrapping="Wrap" Text="Home" FontWeight="ExtraBlack" FontSize="40" Foreground="Purple" VerticalAlignment="Top" Height="51"/>
+            <Button HorizontalAlignment="Left" Background="Indigo" Margin="65,285,0,0" VerticalAlignment="Top" Height="200" Width="190" Click="filterClick" StylusButtonUp="filterStylus">
+                <StackPanel>
+                    <Image Source="Icons/filterIcon.png" Height="150"/>
+                    <TextBlock><Run Foreground="White" FontWeight="Bold" Text="Filter TimeLine"/></TextBlock>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+    </DockPanel>
+</Page>

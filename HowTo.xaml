@@ -1,0 +1,209 @@
+﻿<Page x:Class="MeNeedLife.HowTo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      MaxWidth="1366"      
+	Title="Request Organ">
+    <DockPanel>
+        <Frame x:Name="_aboutFrame"/>
+        <Grid Grid.RowSpan="2" Width="1369" Height="768">
+            <TextBlock x:Name="TextAbout" Padding="10 20 0 0" HorizontalAlignment="Left" Margin="656,-13,0,0" FontSize="25" Visibility="Collapsed" FontFamily="Georgia" Foreground="Black" TextWrapping="Wrap" VerticalAlignment="Top" Height="639" Width="664">
+            	<Run Text="Currently more than 115,000 men, women and children are awaiting organ transplants to save their lives."/>
+            	
+                <LineBreak/><Span><Run/></Span><LineBreak/><Span>
+            		<Run Text="They're in need of blood, hearts, kidneys, livers, lungs, and other organs which can all be transplanted if donors were available , giving them a second chance at life."/>
+            	</Span><LineBreak/><Span><Run/></Span><LineBreak/><Span>
+            		<Run Foreground="Red" Text="This app, MeNeedLife will help you to connect with the several donors and about 200 NGOs along with other organizations that have been scrutinised for transparency &amp; credibility at the same time."/>
+            	</Span><LineBreak/><Span><Run/></Span><LineBreak/><Run/> <Span>
+            		<Run Text="With features like Request Organ, Request Blood, Donate Organ, Donate Blood the application in itself is like a Window of a Organization in your Hand. Just fill easy forms and go through timelines to utilize it accordingly."/>
+            	</Span><LineBreak/><Span><Run/></Span><LineBreak/><Run/> <Span>
+            		<Run Text="Check the Supporters page for more details regarding the supporting organizations and social entities. Also go back and check our Support Us page to help us so that we can spread our cause and save lives. ~ MeNeedit"/>
+            	</Span></TextBlock>
+
+            <Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="651" Name="ContentPanel">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Assets/layout.jpg"></ImageBrush>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Left" FontSize="40" Foreground="White" FontWeight="ExtraBlack" Margin="10,0,0,0" TextWrapping="Wrap" Text="How To Use" VerticalAlignment="Top" Height="67" Width="374"/>
+                <Button Content="Search" Background="DarkOrange" FontSize="30" FontWeight="Bold" Name="SearchBtn" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="185" Height="108" Click="SearchBtn_Click" StylusButtonUp="SearchBtn_StylusButtonUp"/>
+                <Button Content="My City" Name="MycityBtn" Background="RoyalBlue" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Margin="234,122,0,0" VerticalAlignment="Top" Width="185" Height="108" StylusButtonUp="MycityBtn_StylusButtonUp" Click="MycityBtn_Click"/>
+                <Button Content="Filter Now" Name="FilterBtn" Background="Indigo" FontSize="30" FontWeight="Bold"  HorizontalAlignment="Left" Margin="456,122,0,0" VerticalAlignment="Top" Width="185" Height="108"  StylusButtonUp="FilterBtn_StylusButtonUp" Click="FilterBtn_Click"/>
+                <Button Content="Donate Organ" Name="DOBtn" Background="ForestGreen" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,442,0,0" VerticalAlignment="Top" Width="287" Height="108" StylusButtonUp="DOBtn_StylusButtonUp" Click="DOBtn_Click"/>
+                <Button Content="Donate Blood" Name="DBBtn" Background="Firebrick" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Margin="354,442,0,0" VerticalAlignment="Top" Width="287" Height="108" Click="DBBtn_Click" StylusButtonUp="DBBtn_StylusButtonUp"/>
+                <Button Content="Request Organ" Name="ROBtn" Background="LightSeaGreen" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Margin="354,282,0,0" VerticalAlignment="Top" Width="287" Height="108" Click="ROBtn_Click" StylusButtonUp="ROBtn_StylusButtonUp"/>
+                <Button Content="Request Blood" Name="RBBtn" Background="Crimson" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,282,0,0" VerticalAlignment="Top" Width="287" Height="108" Click="RBBtn_Click" StylusButtonUp="RBBtn_StylusButtonUp"/>
+                <Button Content="TimeLine" Name="TimelineBtn" Background="YellowGreen" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,606,0,0" VerticalAlignment="Top" Width="631" Height="108" Click="TimelineBtn_Click" StylusButtonUp="TimelineBtn_StylusButtonUp"/>
+
+            </Grid>
+            <TextBlock TextWrapping="Wrap" Name="bdTitle" Visibility="Collapsed" FontSize="30" Text="Organ Request TimeLine" Margin="656,0,383,714" Foreground="SeaGreen" Height="39"/>
+            <Grid HorizontalAlignment="Left" Height="142" Margin="651,626,-19,0" VerticalAlignment="Top" Width="737" Background="Gray">
+
+                <Image Source="/Assets/back.png" Height="64" Width="64" Name="backimg" Margin="40,15,632,48" StylusButtonUp="backimg_StylusUp" MouseUp="backimg_MouseUp" MouseLeave="Image_MouseLeave" MouseEnter="Image_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/filter.png" Name="filter" Height="64" Width="64" Margin="140,22,503,56" StylusButtonUp="filter_StylusUp" MouseUp="filter_MouseUp" MouseLeave="filter_MouseLeave" MouseEnter="filter_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/home.png" Name="home" Height="64" Width="64" Margin="266,15,406,48" StylusButtonUp="home_StylusButtonUp" MouseUp="home_MouseUp" MouseLeave="home_MouseLeave" MouseEnter="home_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/about.png" Name="about" Height="64" Width="64" Margin="376,15,296,48" StylusButtonUp="about_StylusButtonUp" MouseUp="about_MouseUp" MouseLeave="about_MouseLeave" MouseEnter="about_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/mycity.png" Name="mycity" Height="64" Width="64" Margin="496,15,176,48" StylusButtonUp="mycity_StylusButtonUp" MouseUp="mycity_MouseUp" MouseLeave="mycity_MouseLeave" MouseEnter="mycity_MouseEnter" >
+                </Image>
+                <Image Source="/Assets/contact.png" Name="howto" Height="64" Width="64" Margin="612,15,60,48" StylusButtonUp="howto_StylusButtonUp" MouseUp="howto_MouseUp" MouseLeave="howto_MouseLeave" MouseEnter="howto_MouseEnter" >
+                </Image>
+                <TextBlock HorizontalAlignment="Left" Margin="55,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Search" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="160,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Filter Now" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="282,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Home" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="392,85,0,0" TextWrapping="Wrap" Foreground="White" Text="About" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="505,85,0,0" TextWrapping="Wrap" Foreground="White" Text="TimeLine" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="625,85,0,0" TextWrapping="Wrap" Foreground="White" Text="Contact" VerticalAlignment="Top"/>
+            </Grid>
+
+            <Grid HorizontalAlignment="Left" Height="611" Margin="656,10,0,0" VerticalAlignment="Top" Width="703">
+                <TextBlock HorizontalAlignment="Left" Name="TimelineText" Padding="10" Visibility="Collapsed" Margin="0,0,0,0" FontFamily="Times New Roman" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="621" Width="713">
+                <Run FontFamily="Segoe" Foreground="OrangeRed" FontWeight="ExtraBlack" Text="Learn how to use the TimeLine feature of MeNeedLife Application."/>
+            	<Run/>
+                <Run Text="&#13;&#13;1. Let the TimeLine load fully, you will see entries showing you requests and donation pledges (if not private)."/>
+            	<Run/>
+                <Run Text="&#13;&#13;2. If there is some problem in loading timeline try checking your internet connection. Additionaly you can use refresh button to reload the timeline."/>
+            	<Run/>
+                <Run Text="&#13;&#13;3. After the timeline is loaded fully, you can look for the blood donors and contact them if you want, also you can share the pledges using facebook and share on twitter button provided."/>
+            	<Run/>
+                <Run Text="&#13;&#13;4. The timeline also lists the requests for Blood with blood group, if you want to help the person in need do contact by using number provided there. Also you can share the request on facebook and twitter so that the scope is widen."/>
+            	<Run/>
+                <Run Text="&#13;&#13;5. Click on the TimeLine items and use share on facebook and twitter buttons. If you want to know the date, do hover above the item, it will tooltip the date on which request or pledge was posted."/>
+            	<Run/>
+                <Run Text="&#13;&#13;6. TimeLine is synchronized and it will add the newly posted requests and donations instantly, just use the refresh the TimeLine and you can see them."/>
+            	<Run/>
+                <Run Text="&#13;&#13;7. You can always use My City and Filter Now features built upon timeline to get personalized results."/>
+            	<Run/>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left" Name="DonateOrganText" Padding="10" Visibility="Collapsed" Margin="0,0,0,0" FontFamily="Times New Roman" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="621" Width="713">
+                <Run FontFamily="Segoe" Foreground="OrangeRed" FontWeight="ExtraBlack" Text="Learn how to use the Donate Organ feature of MeNeedLife Application."/>
+            	<Run/>
+                <Run Text="&#13;&#13;1. On the Donate Organ page of the Application, you will see different listboxes provided with proper options."/>
+            	<Run/>
+                <Run Text="&#13;&#13;2. We need to know about your Blood Group and so do the Agencies we are venturing with, so choose from the list of Blood Group."/>
+            	<Run/>
+                <Run Text="&#13;&#13;3. Next option asks you to tell about, your organ donation. You can either choose all for whole body donation or individual organs. Please keep in mind that, all donations are posthumus."/>
+            	<Run/>
+                <Run Text="&#13;&#13;4. Here it comes, do select your City and if you are unable to find the city in the list do choose one which is near you."/>
+            	<Run/>
+                <Run Text="&#13;&#13;5. Please enter your full name, no nick names must be entered and please note that full name will let other identify you."/>
+            	<Run/>
+                <Run Text="&#13;&#13;6. Disease History! if you were suffering any disease which was communicable whether chronic or acute, please tick the option."/>
+            	<Run/>
+                <Run Text="&#13;&#13;7. Yes, enter your 10 digit mobile number and don't add +91 or 0 ahead of the number, we will do it ourselves."/>
+            	<Run/>
+                <Run Text="&#13;&#13;8. If you want your donation to be private, no posts on Facebook, Twitter, no mentions on TimeLine."/>
+            	<Run/>
+                </TextBlock>
+
+                <TextBlock HorizontalAlignment="Left" Name="DonateBloodText" Padding="10" Visibility="Hidden" Margin="0,0,0,0" FontFamily="Times New Roman" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="621" Width="713">
+                <Run FontFamily="Segoe" Foreground="OrangeRed" FontWeight="ExtraBlack" Text="Learn how to use the Donate Blood feature of MeNeedLife Application."/>
+            	<Run/>
+                <Run Text="&#13;&#13;1. On the Donate Blood page of the Application, you will see different listboxes provided with proper options."/>
+            	<Run/>
+                <Run Text="&#13;&#13;2. We need to know about your Blood Group and so do the Agencies we are venturing with, so choose from the list of Blood Group."/>
+            	<Run/>
+                <Run Text="&#13;&#13;3. Here it comes, do select your City and if you are unable to find the city in the list do choose one which is near you."/>
+            	<Run/>
+                <Run Text="&#13;&#13;4. Please enter your full name, no nick names must be entered and please note that full name will let other identify you."/>
+            	<Run/>
+                <Run Text="&#13;&#13;5. Disease History! if you were suffering any disease which was communicable whether chronic or acute, please tick the option."/>
+            	<Run/>
+                <Run Text="&#13;&#13;6. Yes, enter your 10 digit mobile number and don't add +91 or 0 ahead of the number, we will do it ourselves."/>
+            	<Run/>
+                <Run Text="&#13;&#13;7. If you want your donation to be private, no posts on Facebook, Twitter, no mentions on TimeLine."/>
+            	<Run/>
+                <Run Text="&#13;&#13;8. Click on Donate Blood button and you will get the confirmation, after its successful. Agencies will reach you out through your contact no. in a day or two."/>
+            	<Run/>
+                </TextBlock>
+
+                <TextBlock HorizontalAlignment="Left" Name="RequestOrganText" Padding="10" Visibility="Collapsed" Margin="0,0,0,0" FontFamily="Times New Roman" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="621" Width="713">
+                <Run FontFamily="Segoe" Foreground="OrangeRed" FontWeight="ExtraBlack" Text="Learn how to use the Request Organ feature of MeNeedLife Application."/>
+            	<Run/>
+                <Run Text="&#13;&#13;1. On the Request Organ page of the Application, you will see different listboxes provided with proper options."/>
+            	<Run/>
+                <Run Text="&#13;&#13;2. For your ease, a personalized TimeLine is provided which shows the latest Organ Donation Pledges and Organ Requests."/>
+            	<Run/>
+                <Run Text="&#13;&#13;3. Select the organ your relative is in need of, you can only select only one organ from the list."/>
+            	<Run/>
+                <Run Text="&#13;&#13;4. Select your city so that, if any Hospital/NGO is able to get you a live donor or organ from Organ Bank then it will be easy for them to reach you."/>
+            	<Run/>
+                <Run Text="&#13;&#13;5. Please enter your full name, no nick names must be entered and please note that full name will let other identify you."/>
+            	<Run/>
+                <Run Text="&#13;&#13;6. Please enter the name of Doctor or Hospital who is looking after the patient or where patient is admitted currently."/>
+            	<Run/>
+                <Run Text="&#13;&#13;7. Enter your Mobile Number so that you can be reached if there is any help."/>
+            	<Run/>
+                <Run Text="&#13;&#13;8. Additionaly you can share the request you just made on Facebook and Twitter using the share button, refresh the timeline using refresh button. You can also use filter option for live organ donors and contact them."/>
+            	<Run/>
+                </TextBlock>
+
+                <TextBlock HorizontalAlignment="Left" Name="RequestBloodText" Padding="10" Visibility="Collapsed" Margin="0,0,0,0" FontFamily="Times New Roman" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="621" Width="713">
+                <Run FontFamily="Segoe" Foreground="OrangeRed" FontWeight="ExtraBlack" Text="Learn how to use the Request Blood feature of MeNeedLife Application."/>
+            	<Run/>
+                <Run Text="&#13;&#13;1. On the Request Blood page of the Application, you will see different listboxes provided with proper options."/>
+            	<Run/>
+                <Run Text="&#13;&#13;2. For your ease, a personalized TimeLine is provided which shows the latest Blood Donation Pledges and Blood Requests ."/>
+            	<Run/>
+                <Run Text="&#13;&#13;3. Select the Blood Group your relative is in need of, you can only select only one Blood Group from the list."/>
+            	<Run/>
+                <Run Text="&#13;&#13;4. Select your city so that, if any Hospital/NGO is able to get you a voluntary donor or blood type from Blood Bank then it will be easy for them to reach you."/>
+            	<Run/>
+                <Run Text="&#13;&#13;5. Please enter your full name, no nick names must be entered and please note that full name will let others identify you."/>
+            	<Run/>
+                <Run Text="&#13;&#13;6. Please enter the name of Doctor or Hospital who is looking after the patient or where patient is admitted currently."/>
+            	<Run/>
+                <Run Text="&#13;&#13;7. Enter your Mobile Number so that you can be reached if there is any help."/>
+            	<Run/>
+                <Run Text="&#13;&#13;8. Additionaly you can share the request you just made on Facebook and Twitter using the share button, refresh the timeline using refresh button. You can also use filter option for donors and contact them."/>
+            	<Run/>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left" Name="FilterText" Padding="10" Visibility="Collapsed" Margin="0,0,0,0" FontFamily="Times New Roman" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="621" Width="713">
+                <Run FontFamily="Segoe" Foreground="OrangeRed" FontWeight="ExtraBlack" Text="Learn how to use the Filter feature of MeNeedLife Application."/>
+            	<Run/>
+                <Run Text="&#13;&#13;1. Let the TimeLine load fully, you will see entries showing you requests and donation pledges (if not private)."/>
+            	<Run/>
+                <Run Text="&#13;&#13;2. If there is some problem in loading timeline try checking your internet connection. Additionaly you can use refresh button to reload the timeline."/>
+            	<Run/>
+                <Run Text="&#13;&#13;3. After the timeline is loaded fully, use the options provided in the left panel to filter and search the timeline accordingly. Firstly check on the type of Requests and Pledges. For Organs select organ and vice versa."/>
+            	<Run/>
+                <Run Text="&#13;&#13;4. Now choose category of the filter, if you want all Organ Donations tick on Organ and then on Donate, you can make different combinations. Choose none for no filter."/>
+            	<Run/>
+                <Run Text="&#13;&#13;5. Prior to this if you have selected Organ, it will disable the BloodGroup box, while if you have selected Blood then Organ box is disabled while if you chose none, both boxes get disabled."/>
+            	<Run/>
+                <Run Text="&#13;&#13;6. Filter by the city by choosing city and clicking on filter timeline. The combination of all these filters will provide unique results on the right panel which is the filtered timeline."/>
+            	<Run/>
+                <Run Text="&#13;&#13;7. You can use Share on FaceBook and Share on Twitter button to share the requests and donations to help those are in need."/>
+            	<Run/>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left" Name="MyCityText" Padding="10" Visibility="Collapsed" Margin="0,0,0,0" FontFamily="Times New Roman" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="621" Width="713">
+                <Run FontFamily="Segoe" Foreground="OrangeRed" FontWeight="ExtraBlack" Text="Learn how to use the My City feature of MeNeedLife Application."/>
+            	<Run/>
+                <Run Text="&#13;&#13;1. Let the TimeLine load fully, you will see entries showing you requests and donation pledges (if not private)."/>
+            	<Run/>
+                <Run Text="&#13;&#13;2. If there is some problem in loading timeline try checking your internet connection. Additionaly you can use refresh button to reload the timeline."/>
+            	<Run/>
+                <Run Text="&#13;&#13;3. After the timeline is loaded fully, you can now use the left panel for personalization."/>
+            	<Run/>
+                <Run Text="&#13;&#13;4. You will see a map of India, if you have a properly working Internet connection, this means you are ready to go for the city results."/>
+            	<Run/>
+                <Run Text="&#13;&#13;5. Click on the city name from the list which is provided just below the map, this will get your city focused in map and fetch the coordinates to provide fine results for specific city."/>
+            	<Run/>
+                <Run Text="&#13;&#13;6. You can choose whichever city you want from the list and timeline will show the list of Blood Donors, Organ Donors, Blood Requests, Organ Requests according to the city you selected."/>
+            	<Run/>
+                <Run Text="&#13;&#13;7. You can use Share on FaceBook and Share on Twitter button to share the requests and donations to help those are in need."/>
+            	<Run/>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left" x:Name="SearchText" Padding="10" Visibility="Collapsed" Margin="0,0,0,0" FontFamily="Times New Roman" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="621" Width="713"><Run FontFamily="Segoe" Foreground="OrangeRed" FontWeight="ExtraBlack" Text="Learn how to use the Search feature of MeNeedLife Application."/><Run Text=" "/><Run/><Run Text=" "/><Run Text="&#xA;&#xA;1. Let application load the interface for the search."/><Run Text=" "/><Run/><Run Text=" "/><Run Text="&#xA;&#xA;2. The interface containing a Search Box, a text label with city name and a banner will be loaded gradually."/><Run Text=" "/><Run/><Run Text=" "/><Run Text="&#xA;&#xA;3. After the interface get loaded and loading bar disappears, you are ready for the search."/><Run Text=" "/><Run/><Run Text=" "/><Run Text="&#xA;&#xA;4. Select the City from the list, in which you want to search. You can choose the city from the left panel. However only one city can be selected at a time."/><Run Text=" "/><Run/><Run Text=" "/><Run Text="&#xA;&#xA;5. Now click on the Search Box, a cursor will be displayed. Now go to the menu bar and choose the keyboard to provide input (Search Term/Keyword). Now tap the search Button provided. You will see a list just below it showing you the list of Hospitals, Blood Banks or whatever you have searched."/><Run Text=" "/><Run/><Run Text=" "/><Run Text="&#xA;&#xA;6. The list will have the Name of the Doctor/Hospital and its address with Ratings (if Any). You will need to click on any of these results or tap &gt; arrow to get to next page of results."/><Run Text=" "/><Run/><Run Text=" "/><Run Text="&#xA;&#xA;7. After you click on the item in the list, you will get exact position pointed on a Map, you can zoom in and out for more specifics."/><Run Text=" "/><InlineUIContainer>
+                		<Image Height="100" Width="100"/>
+                	</InlineUIContainer></TextBlock>
+                <Image Name="Image" HorizontalAlignment="Left" Height="611" Source="/Assets/poster6.png" VerticalAlignment="Top" Width="703"/>
+
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Page>
